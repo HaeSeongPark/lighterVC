@@ -12,6 +12,8 @@
 
 
 @interface PhotoViewController () <DetailsViewControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIStackView *contentStackView;
+@property (weak, nonatomic) IBOutlet UIView *viewContainter;
 @end
 
 
@@ -37,10 +39,8 @@
     details.photo = self.photo;
     details.delegate = self;
     [self addChildViewController:details];
-    CGRect frame = self.view.bounds;
-    frame.origin.y = 110;
-    details.view.frame = frame;
-    [self.view addSubview:details.view];
+    details.view.frame = _viewContainter.bounds;
+    [_viewContainter addSubview:details.view];
     [details didMoveToParentViewController:self];
 }
 
