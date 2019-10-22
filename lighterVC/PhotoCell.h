@@ -12,5 +12,5 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *photoTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *photoDateLabel;
-
+@property (class, nonatomic, readonly) NSString * identifier;
 @end

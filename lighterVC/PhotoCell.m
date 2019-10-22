@@ -7,6 +7,7 @@
 
 
 @implementation PhotoCell
+static NSString* const _identifier = @"PhotoCell";
 
 + (UINib *)nib
 {
@@ -22,6 +23,10 @@
     } else {
         self.photoTitleLabel.shadowColor = nil;
     }
+}
+
++ (NSString *)identifier {
+    return _identifier;
 }
 
 @end

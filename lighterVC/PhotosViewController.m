@@ -16,7 +16,7 @@
 #import "PhotoViewController.h"
 
 
-static NSString * const PhotoCellIdentifier = @"PhotoCell";
+//static NSString * const PhotoCellIdentifier = @"PhotoCell";
 
 
 @interface PhotosViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -42,10 +42,10 @@ static NSString * const PhotoCellIdentifier = @"PhotoCell";
     };
     NSArray *photos = [AppDelegate sharedDelegate].store.sortedPhotos;
     self.photosArrayDataSource = [[ArrayDataSource alloc] initWithItems:photos
-                                                         cellIdentifier:PhotoCellIdentifier
+                                                         cellIdentifier:PhotoCell.identifier
                                                      configureCellBlock:configureCell];
     self.tableView.dataSource = self.photosArrayDataSource;
-    [self.tableView registerNib:[PhotoCell nib] forCellReuseIdentifier:PhotoCellIdentifier];
+    [self.tableView registerNib:[PhotoCell nib] forCellReuseIdentifier:PhotoCell.identifier];
     self.tableView.estimatedRowHeight = 30;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
